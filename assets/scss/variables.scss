@@ -1,0 +1,94 @@
+@import '~vuetify/src/styles/settings';
+
+@mixin breakpoint($bp) {
+  @media #{map-get($display-breakpoints, $bp)} {
+    @content;
+  }
+}
+
+@font-face {
+  font-family: SEN Regular;
+  src:
+    url('@/assets/fonts/sen/Sen-Regular.woff') format('woff'),
+    url('@/assets/fonts/sen/Sen-Regular.woff2') format('woff2'),
+    url('@/assets/fonts/sen/Sen-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+  font-family: SEN Bold;
+  src:
+    url('@/assets/fonts/sen/Sen-Bold.woff') format('woff'),
+    url('@/assets/fonts/sen/Sen-Bold.woff2') format('woff2'),
+    url('@/assets/fonts/sen/Sen-Bold.woff2') format('woff2');
+    font-weight: bolder;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* TYPOGRAPHY */
+$body-font-family: 'SEN Regular', serif;
+$font-size-root: 16px;
+$line-height-root: 1.2;
+
+h1 {
+  font-size: 70px;
+
+  @include breakpoint('sm-only') {
+    font-size: 62px;
+  }
+
+  @include breakpoint('xs-only') {
+    font-size: 54px;
+  }
+}
+h2 {
+  font-size: 48px;
+
+  @include breakpoint('sm-only') {
+    font-size: 42px;
+  }
+
+  @include breakpoint('xs-only') {
+    font-size: 36px;
+  }
+}
+h3 {
+  font-size: 28px;
+
+  @include breakpoint('sm-only') {
+    font-size: 24px;
+  }
+
+  @include breakpoint('xs-only') {
+    font-size: 20px;
+  }
+}
+h4 {
+  font-size: 22px;
+}
+h5 {
+  font-size: 14px;
+}
+h6 {
+  font-size: 12px;
+}
+b, strong {
+  font-family: SEN Bold;
+}
+a {
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+
+/* COLORS */
+$primary: #8bc34a;
+$secondary: #cddc39;
+$accent: #673ab7;
+$error: #f44336;
+$warning: #ffc107;
+$info: #03a9f4;
+$success: #4caf50;
+$bg-radial-s-to-p: radial-gradient(circle, $secondary, $primary);
